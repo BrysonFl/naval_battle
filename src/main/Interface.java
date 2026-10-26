@@ -15,7 +15,7 @@ public class Interface {
     }
 
     public void showTable() {
-        for (Object[] row : this.table.getBoard()) {
+        for (Object[] row : this.table.getShowBoard()) {
             for (Object item : row) {
                 System.out.print(item + " ");
             }

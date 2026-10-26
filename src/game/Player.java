@@ -42,5 +42,18 @@ public class Player {
     public void setRemainingShots(int remainingShots) {
         this.remainingShots = remainingShots;
     }
-    
+
+    public void calculateRemainingShots() {
+        this.remainingShots -= 1;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", successes=" + successes +
+                ", failures=" + failures +
+                ", remainingShots=" + remainingShots +
+                '}';
+    }
 }

@@ -5,6 +5,7 @@ import game.Table;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Random;
 
 /**
  *
@@ -45,21 +46,50 @@ public class NavalBattleMain {
 
             do {
                 String message = "Es el turno de ";
-                String playerTurn = turnPlayerOne ? message + " Jugador: " + humanPlayer.getName() : message + " Jugador: " + computerPlayer.getName();
+                //String playerTurn = turnPlayerOne ? message + " Jugador: " + humanPlayer.getName() : message + " Jugador: " + computerPlayer.getName();
                 System.out.println();
+
+                int coordinateX;
+                int coordinateY;
 
                 if (turnPlayerOne) {
                     System.out.println("Ingresa las coordenadas de tu jugada: ");
                     System.out.print("X: ");
-                    int playerOneCoordinateX = reader.read();
+                    coordinateX = Integer.parseInt(reader.readLine());
 
                     System.out.print("Y: ");
-                    int playerOneCoordinateY = reader.read();
+                    coordinateY = Integer.parseInt(reader.readLine());
 
-                    computerTable.takeTurn(playerOneCoordinateX, playerOneCoordinateY);
-                    turnPlayerOne = !turnPlayerOne;
+                    computerTable.takeTurn(coordinateX, coordinateY);
+                    turnPlayerOne = false;
+
+                    System.out.println("Tablero del computador");
+                    computerInterface.showTable();
+                } else {
+                    System.out.println("Turno del computador");
+                    Random random = new Random();
+
+                    coordinateX = random.nextInt(size);
+                    coordinateY = random.nextInt(size);
+
+                    humanTable.takeTurn(coordinateX, coordinateY);
+                    turnPlayerOne = true;
+
+                    System.out.println("Tablero del jugador");
+                    humanInterface.showTable();
+                }
+
+                if (humanPlayer.getSuccesses() == 5) {
+                    System.out.println();
+                    hasWinner = true;
                 }
             } while(!hasWinner);
+
+            System.out.println("Estadisticas del jugador");
+            System.out.println(humanPlayer);
+            System.out.println();
+            System.out.println("Estadisticas del computador");
+            System.out.println(computerPlayer);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
