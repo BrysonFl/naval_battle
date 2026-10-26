@@ -4,13 +4,14 @@ package game;
  *
  * @author Bryson Florez
  */
-public class Coordenada {
+public class Coordinate {
     
     private int coordinateX;
     private int coordinateY;
     
-    public Coordenada() {
-        
+    public Coordinate(int coordinateX, int coordinateY) {
+        this.coordinateX = coordinateX;
+        this.coordinateY = coordinateY;
     }
 
     public int getCoordinateX() {

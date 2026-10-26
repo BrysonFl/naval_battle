@@ -5,10 +5,10 @@ package game;
  * @author PC
  */
 public class Player {
-    
-    private String name;
+
+    private final String name;
     private int successes;
-    private int failures;
+    private int failures = 0;
     private int remainingShots;
     
     public Player(String name) {
@@ -23,16 +23,16 @@ public class Player {
         return successes;
     }
 
-    public void setSuccesses(int successes) {
-        this.successes = successes;
+    public void setSuccesses() {
+        this.successes += 1;
     }
 
     public int getFailures() {
         return failures;
     }
 
-    public void setFailures(int failures) {
-        this.failures = failures;
+    public void setFailures() {
+        this.failures += 1;
     }
 
     public int getRemainingShots() {
