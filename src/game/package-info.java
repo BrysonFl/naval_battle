@@ -1,5 +1,10 @@
 /**
- * En este paquete encontraremos las clases que tienen que ver con el juego (Board, Boat, Coordinate, Player)
+ * {@summary Paquete que define el modelo del dominio del juego de Batalla Naval.}
+ * Contiene las entidades esenciales para la partida: tablero, barcos, coordenadas y participantes.
+ *
+ * @author Nicolas Niviayo
+ * @author Diego Diaz
+ * @author Jesus Solis
  * @author Bryson Florez
  */
 package game;
