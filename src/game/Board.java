@@ -21,7 +21,7 @@ public class Board {
      * Define la cantidad de filas y columnas que componen la cuadrícula (matriz dimension x dimension).
      */
     private final int dimension;
-    
+
     /**
      * {@summary Matriz visible que representa el estado público del tablero en consola.}
      * Almacena caracteres indicadores de celda vacía ("-"), agua/disparo efectuado ("X") o barco impactado ("B").
